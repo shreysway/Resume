@@ -1,20 +1,222 @@
-const themes = document.getElementsByClassName("theme");
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shrey's Resume</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/theme-switcher.css">
+    <style>
+        /* Add mobile-specific styles */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            #wrapper--hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            #profile-pic {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            #socials--list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #socials--list a {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+            #socials--list img {
+                margin-right: 5px;
+            }
+            #wrapper--techstack__items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card--techstack {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            #work-history-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card--work-history {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .line-break {
+                display: none;
+            }
+        }
 
-Array.from(themes).forEach((theme) => {
-    theme.addEventListener("click", (e) => {
-        document
-            .querySelector("body")
-            .setAttribute("data-theme", e.target.dataset.theme);
-        localStorage.setItem("theme", e.target.dataset.theme);
-    });
-});
+        /* Style for the theme switcher */
+        #theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
 
-function getThemeOnLoad() {
-    const theme = localStorage.getItem("theme");
+        .theme {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
 
-    if (theme) {
-        document.querySelector("body").setAttribute("data-theme", theme);
-    }
-}
+        #theme-light {
+            background-color: #fff;
+            border: 1px solid #000;
+        }
 
-getThemeOnLoad();
+        #theme-dark {
+            background-color: #000;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container--main">
+
+        <!-- Hero Section -->
+        <section id="wrapper--hero" class="section--page">
+            <img id="profile-pic" src="./assets/images/profile_pic.jpg">
+            <div>
+                <h1 id="user-name">Shrey Markandey</h1>
+                <p id="bio">Accomplished DevOps Engineer | Agile, Adaptable, Driven | Delivering Optimal Performance | Leveraging Cutting-Edge Solutions.</p>
+                <p id="email">👉 shrey.markandey@gmail.com</p>
+            </div>
+        </section>
+
+        <!-- Socials and Resume Download Section -->
+        <section class="section--page">
+            <div id="socials--list">
+                <a href="https://linkedin.com/in/shreysway" target="_blank">
+                    <img src="./assets/images/icons8-linkedin-48.png" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                    <span style="color: white; margin-left: 5px; font-weight: bold;">Shrey's LinkedIn</span>
+                </a>
+                <a href="./assets/resume.pdf" target="_blank">
+                    <img src="./assets/images/cv.png" alt="Download Resume" style="width: 20px; height: 20px; vertical-align: middle;">
+                    <span style="color: white; margin-left: 5px; font-weight: bold;">Download Resume</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills & Qualifications Section -->
+        <section class="section--page">
+            <h2>Skills & Qualifications</h2>
+            <ul id="qualifications--list">
+                <li>✔️ 4+ Years experience with DevOps.</li>
+                <li>✔️ Extensive knowledge in Linux, Cloud & Containers.</li>
+                <li>✔️ Loves Automating Stuff</li>
+            </ul>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="section--page">
+            <h2>Tech stack</h2>
+            <div id="wrapper--techstack__items">
+                <div class="card--techstack"><span>Languages: Bash</span></div>
+                <div class="card--techstack"><span>OS: Linux</span></div>
+                <div class="card--techstack"><span>Cloud: AWS, Azure</span></div>
+                <div class="card--techstack"><span>Containers & Orchestration: Docker, Kubernetes</span></div>
+                <div class="card--techstack"><span>Version Control: Git</span></div>
+                <div class="card--techstack"><span>Monitoring: Grafana, Prometheus</span></div>
+                <div class="card--techstack"><span>IaC: Terraform</span></div>
+                <div class="card--techstack"><span>SecOps: Prisma-Cloud, Trivy</span></div>
+            </div>
+        </section>
+
+        <!-- Work History Section -->
+        <section id="work-history-wrapper" class="section--page">
+            <h2>Work History</h2>
+            <div class="line-break"></div>
+
+            <!-- Job 1 -->
+            <div class="card--work-history">
+                <strong>🚧 Senior DevOps Engineer | Trantor | Remote</strong>
+                <p>12/2023 – Present</p>
+                <p>Worked With Palo Alto Networks and Implemented Prisma Cloud For Various clients</p>
+                <ul>
+                    <li>Enhanced performance through the fine-tuning of system parameters and ensuring stability for the client's infrastructure.</li>
+                    <li>Secured the network and systems through the implementation of best-practice security policies and procedures</li>
+                </ul>
+            </div>
+
+            <div class="line-break"></div>
+
+            <!-- Job 2 -->
+            <div class="card--work-history">
+                <strong>🚧 DevOps Engineer | Srijan Technologies | Remote</strong>
+                <p>12/2022 – 12/2023</p>
+                <p>Worked With ICTSI, Pizzahut & Stuff.</p>
+                <ul>
+                    <li>Implemented automated health checks For K8's Cluster in Teams CHANNEL which includes CPU, Memory & HPA status monitoring for client.</li>
+                    <li>Automated EC2 patching through System Manager using Terraform, ensuring system security and compliance with the latest updates.</li>
+                    <li>Leveraging Power Automate to Execute Script just typing some keywords in MS teams.</li>
+                    <li>Successfully integrated EOL (End-of-Life) websites with AKS and EKS, leveraging automation for seamless Tracking and management.</li>
+                    <li>Created pipelines for Docker golden images, utilizing commit ID tags for efficient tracking and version management.</li>
+                    <li>Developed a comprehensive pipeline for Node.js upgrades, integrating custom written make files and bash scripts for image scanning with Trivy, ensuring vulnerability-free deployments.</li>
+                    <li>Proficiently maintained and troubleshooted production clusters to ensure seamless operations and rapid issue resolution for clients like ICTSI, Stuff & Pizza-hut.</li>
+                </ul>
+            </div>
+
+            <div class="line-break"></div>
+
+            <!-- Job 3 -->
+            <div class="card--work-history">
+                <strong>🚧 DevOps Engineer | Digivalet | Indore M.P.</strong>
+                <p>08/2020 - 11/2022</p>
+                <p>Worked In Hotel Automation Industry</p>
+                <ul>
+                    <li>Successfully managed Chrome extension server and Jenkins job to enable automatic updates on client machines, ensuring seamless user experience</li>
+                    <li>Implemented effective bash scripting solutions to optimize deployment processes and enhance overall system efficiency</li>
+                    <li>Hosted Grafana Along With InfluxDB For Better Monitoring Of Over 20+ Servers.</li>
+                    <li>Designed and implemented comprehensive Grafana dashboards for monitoring server performance and tuning, ensuring proactive alerting to prevent production downtime.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
+    </div>
+    <script>
+        const themes = document.getElementsByClassName("theme");
+
+        Array.from(themes).forEach((theme) => {
+            theme.addEventListener("click", (e) => {
+                document
+                    .querySelector("body")
+                    .setAttribute("data-theme", e.target.dataset.theme);
+                localStorage.setItem("theme", e.target.dataset.theme);
+            });
+        });
+
+        function getThemeOnLoad() {
+            const theme = localStorage.getItem("theme");
+
+            if (theme) {
+                document.querySelector("body").setAttribute("data-theme", theme);
+            }
+        }
+
+        getThemeOnLoad();
+    </script>
+</body>
+</html>

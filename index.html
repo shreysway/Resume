@@ -61,6 +61,33 @@
                 display: none;
             }
         }
+
+        /* Style for the theme switcher */
+        #theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .theme {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #theme-light {
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        #theme-dark {
+            background-color: #000;
+            border: 1px solid #fff;
+        }
     </style>
 </head>
 <body>
@@ -169,6 +196,27 @@
         <div class="theme" id="theme-light" data-theme="light"></div>
         <div class="theme" id="theme-dark" data-theme="dark"></div>
     </div>
-    <script src="./js/theme-switcher.js"></script>
+    <script>
+        const themes = document.getElementsByClassName("theme");
+
+        Array.from(themes).forEach((theme) => {
+            theme.addEventListener("click", (e) => {
+                document
+                    .querySelector("body")
+                    .setAttribute("data-theme", e.target.dataset.theme);
+                localStorage.setItem("theme", e.target.dataset.theme);
+            });
+        });
+
+        function getThemeOnLoad() {
+            const theme = localStorage.getItem("theme");
+
+            if (theme) {
+                document.querySelector("body").setAttribute("data-theme", theme);
+            }
+        }
+
+        getThemeOnLoad();
+    </script>
 </body>
 </html>
