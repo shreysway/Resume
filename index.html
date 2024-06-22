@@ -8,6 +8,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/theme-switcher.css">
+    <style>
+        /* Add mobile-specific styles */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            #wrapper--hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            #profile-pic {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            #socials--list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #socials--list a {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+            #socials--list img {
+                margin-right: 5px;
+            }
+            #wrapper--techstack__items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card--techstack {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            #work-history-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card--work-history {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .line-break {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="container--main">
@@ -110,6 +164,10 @@
                 </ul>
             </div>
         </section>
+    </div>
+    <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
     </div>
     <script src="./js/theme-switcher.js"></script>
 </body>
