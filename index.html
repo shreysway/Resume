@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrey's Resume</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/theme-switcher.css">
     <style>
+        /* CSS reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         /* Add mobile-specific styles */
         @media only screen and (max-width: 600px) {
             body {
@@ -62,31 +67,26 @@
             }
         }
 
-        /* Style for the theme switcher */
+        /* Theme switcher positioning */
         #theme-switcher {
             position: fixed;
             top: 10px;
             right: 10px;
             display: flex;
-            gap: 10px;
-            z-index: 1000;
         }
-
         .theme {
             width: 30px;
             height: 30px;
-            border-radius: 50%;
+            margin-left: 10px;
             cursor: pointer;
         }
-
         #theme-light {
-            background-color: #fff;
-            border: 1px solid #000;
+            background: url('./assets/images/light-icon.png') no-repeat center;
+            background-size: contain;
         }
-
         #theme-dark {
-            background-color: #000;
-            border: 1px solid #fff;
+            background: url('./assets/images/dark-icon.png') no-repeat center;
+            background-size: contain;
         }
     </style>
 </head>
