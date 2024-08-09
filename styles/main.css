@@ -70,10 +70,14 @@ li{
     font-weight: 300;
 }
 
-#user-name{
+#user-name {
     font-size: 48px;
     line-height: 1em;
+    white-space: nowrap;  /* Prevents text from wrapping to the next line */
+    overflow: hidden;     /* Optional: hides any overflow if the text is too long */
+    text-align: left;     /* Ensure the text is aligned to the left */
 }
+
 
 #profile-pic{
     width: 150px;
