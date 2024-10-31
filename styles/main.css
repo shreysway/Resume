@@ -1,158 +1,201 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
-:root{
-    --mainTextColor-light:#000;
-    --secondaryTextColor-light:rgb(51 51 51);
-    --mainLinkColor-light:#0da2b8;
-    --mainBorderColor-light:rgb(218, 218, 218);
-    --mainBgColor-light:rgb(249, 250,251);
+:root {
+    /* Colors */
+    --mainTextColor-light: #000;
+    --secondaryTextColor-light: rgb(51 51 51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor-light: rgb(218, 218, 218);
+    --mainBgColor-light: rgb(249, 250, 251);
 
-    --mainTextColor-dark:#fff;
-    --secondaryTextColor-dark:#adb0b1;
-    --mainLinkColor-dark:rgb(30, 190,214);
-    --mainBorderColor-dark:#2b3031;
-    --mainBgColor-dark:#131415;
-    
-    --mainTextColor:var(--mainTextColor-dark);
-    --secondaryTextColor:var(--secondaryTextColor-dark);
-    --mainLinkColor:var(--mainLinkColor-dark);
-    --mainBorderColor:var(--mainBorderColor-dark);
-    --mainBgColor:var(--mainBgColor-dark);
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #adb0b1;
+    --mainLinkColor-dark: rgb(30, 190, 214);
+    --mainBorderColor-dark: #2b3031;
+    --mainBgColor-dark: #131415;
 
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark);
+
+    /* Animation timings */
+    --animation-duration: 1.2s;
+    --animation-delay: 0.3s;
 }
 
-
-*{
+* {
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
     color: var(--mainTextColor);
-    
 }
 
-body{
-    background-color: var(--mainBgColor);            
+body {
+    background-color: var(--mainBgColor);
+    overflow-x: hidden;
 }
 
-p, span, li{
+p, span, li {
     color: var(--secondaryTextColor);
     font-size: 1em;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--mainLinkColor);
     font-weight: 500;
 }
 
-li{
+li {
     line-height: 1.9em;
 }
 
-#container--main{
+#container--main {
     max-width: 700px;
     margin: 0 auto;
     padding: 1em;
 }
 
-.section--page{
+.section--page {
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
-#wrapper--hero{
+#wrapper--hero {
     display: flex;
     align-items: center;
     gap: 4em;
 }
 
-#bio, a{
+#bio, a {
     font-weight: 300;
 }
 
 #user-name {
     font-size: 48px;
     line-height: 1em;
-    white-space: nowrap;  /* Prevents text from wrapping to the next line */
-    overflow: hidden;     /* Optional: hides any overflow if the text is too long */
-    text-align: left;     /* Ensure the text is aligned to the left */
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
 }
 
-
-#profile-pic{
+#profile-pic {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-#email{
+#email {
     color: var(--mainTextColor);
 }
 
-#socials--list{
+#socials--list {
     display: flex;
     justify-content: space-between;
     column-gap: 1em;
     flex-wrap: wrap;
 }
 
-#socials--list a{
+#socials--list a {
     font-weight: 300;
     color: var(--secondaryTextColor);
     font-size: 0.9em;
-    transition: 0.3s;
+    transition: color 0.3s, font-weight 0.3s;
 }
 
-#socials--list a:hover{
+#socials--list a:hover {
     font-weight: 100;
     color: var(--mainLinkColor);
     font-size: 0.9em;
 }
 
-#qualifications--list{
+#qualifications--list {
     list-style: none;
 }
 
-#wrapper--techstack__items{
+#wrapper--techstack__items {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     font-size: 0.9em;
 }
 
-.card--techstack{
+.card--techstack {
     border: 1px solid var(--mainBorderColor);
     border-radius: 5px;
     padding: 0.5em 1em;
-    align-items: center;
 }
 
-.card--project{
+.card--project {
     padding-top: 1em;
     padding-bottom: 1em;
     border-top: 1px solid var(--mainBorderColor);
 }
 
-.card--project a{
+.card--project a {
     color: var(--mainTextColor);
-
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
-.card--project a:hover{
-    color: rgb(30, 190,214);
-
+.card--project a:hover {
+    color: rgb(30, 190, 214);
 }
 
-.card--work-history{
+.card--work-history {
     border-left: 1px solid var(--mainBorderColor);
     margin-top: 3em;
     margin-bottom: 3em;
     padding-left: 2em;
 }
 
-.line-break{
+.line-break {
     background-color: var(--mainBorderColor);
     height: 1px;
 }
+
+/* CSS animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Animation classes */
+.fade-in, .slide-in-left, .slide-in-right, .bounce-in, .zoom-in, .scale-up {
+    opacity: 0; /* Initial state for animation */
+}
+
+.fade-in.animate { animation: fadeIn var(--animation-duration) ease forwards; }
+.slide-in-left.animate { animation: slideInLeft var(--animation-duration) ease forwards; }
+.slide-in-right.animate { animation: slideInRight var(--animation-duration) ease forwards; }
+.bounce-in.animate { animation: bounceIn 0.8s ease forwards; }
+.zoom-in.animate { animation: zoomIn var(--animation-duration) ease forwards; }
+.scale-up.animate { animation: scaleUp var(--animation-duration) ease forwards; }
