@@ -46,6 +46,7 @@ a {
     text-decoration: none;
     color: var(--mainLinkColor);
     font-weight: 500;
+    transition: color 0.3s, transform 0.3s; /* Added transform for hover effects */
 }
 
 li {
@@ -59,8 +60,7 @@ li {
 }
 
 .section--page {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0; /* Simplified padding */
 }
 
 #wrapper--hero {
@@ -94,23 +94,40 @@ li {
 
 #socials--list {
     display: flex;
-    justify-content: space-between;
-    column-gap: 1em;
+    justify-content: flex-start; /* Align items to the left */
+    column-gap: 16em; /* Space between links */
     flex-wrap: wrap;
+    padding: 0; /* Remove padding */
 }
 
-#socials--list a {
-    font-weight: 300;
-    color: var(--secondaryTextColor);
-    font-size: 0.9em;
-    transition: color 0.3s, font-weight 0.3s;
+.social-link {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    font-weight: 500; /* Medium weight for better visibility */
+    color: #e0e0e0; /* Light gray text color for contrast */
+    font-size: 1em; /* Standard font size */
+    padding: 10px 20px; /* Button-like feel */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #2e2e2e; /* Darker background for links */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
-#socials--list a:hover {
-    font-weight: 100;
-    color: var(--mainLinkColor);
-    font-size: 0.9em;
+.social-link img {
+    margin-right: 8px; /* Space between icon and text */
 }
+
+.social-link:hover {
+    background-color: #0077b5; /* LinkedIn blue for hover */
+    color: white; /* Change text color to white */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.social-link:nth-child(2):hover {
+    background-color: #fce6bf81; /* Grey background for Resume link hover */
+    color: white; /* Change text color to white */
+}
+
+
 
 #qualifications--list {
     list-style: none;
@@ -127,11 +144,11 @@ li {
     border: 1px solid var(--mainBorderColor);
     border-radius: 5px;
     padding: 0.5em 1em;
+    background-color: #2e2e2e; /* Darker background for tech stack cards */
 }
 
 .card--project {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0; /* Simplified padding */
     border-top: 1px solid var(--mainBorderColor);
 }
 
@@ -141,13 +158,12 @@ li {
 }
 
 .card--project a:hover {
-    color: rgb(30, 190, 214);
+    color: rgb(30, 190, 214); /* Hover color for project links */
 }
 
 .card--work-history {
     border-left: 1px solid var(--mainBorderColor);
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin: 3em 0; /* Simplified margin */
     padding-left: 2em;
 }
 
