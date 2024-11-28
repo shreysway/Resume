@@ -75,10 +75,21 @@ li {
 
 #user-name {
     font-size: 48px;
-    line-height: 1em;
+    line-height: 1.2em;
     white-space: nowrap;
     overflow: hidden;
     text-align: left;
+    font-weight: 600;
+    color: #30bfef; /* Sleek charcoal grey */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#user-name:hover {
+    color: #30bfef; /* Darker charcoal on hover */
+    transform: scale(1.05);
 }
 
 #profile-pic {
@@ -89,13 +100,15 @@ li {
 }
 
 #email {
-    color: var(--mainTextColor);
+    color: #f3f6f6;
 }
+
+
 
 #socials--list {
     display: flex;
     justify-content: flex-start; /* Align items to the left */
-    column-gap: 16em; /* Space between links */
+    column-gap: 15em; /* Increased space between links for better flow */
     flex-wrap: wrap;
     padding: 0; /* Remove padding */
 }
@@ -106,8 +119,8 @@ li {
     font-weight: 500; /* Medium weight for better visibility */
     color: #e0e0e0; /* Light gray text color for contrast */
     font-size: 1em; /* Standard font size */
-    padding: 10px 20px; /* Button-like feel */
-    border-radius: 5px; /* Rounded corners */
+    padding: 12px 24px; /* Button-like feel */
+    border-radius: 25px; /* More rounded corners */
     background-color: #2e2e2e; /* Darker background for links */
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
 }
@@ -127,12 +140,11 @@ li {
     color: white; /* Change text color to white */
 }
 
-
-
 #qualifications--list {
     list-style: none;
 }
 
+/* Tech Stack Items */
 #wrapper--techstack__items {
     display: flex;
     flex-wrap: wrap;
@@ -140,25 +152,47 @@ li {
     font-size: 0.9em;
 }
 
+/* Tech Stack Cards */
 .card--techstack {
-    border: 1px solid var(--mainBorderColor);
-    border-radius: 5px;
-    padding: 0.5em 1em;
     background-color: #2e2e2e; /* Darker background for tech stack cards */
+    padding: 0.8em 1.2em; /* Increased padding for a more spacious look */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
 
+.card--techstack:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Project Cards */
 .card--project {
-    padding: 1em 0; /* Simplified padding */
-    border-top: 1px solid var(--mainBorderColor);
+    padding: 1em 1.5em; /* Increased padding for more spacious look */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #2e2e2e; /* Darker background for project cards */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
 
+.card--project:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Project Card Links */
 .card--project a {
     color: var(--mainTextColor);
-    transition: color 0.3s;
+    padding: 8px 16px; /* Add padding for better button-like appearance */
+    border-radius: 25px; /* Rounded edges for the links */
+    background-color: rgba(30, 190, 214, 0.1); /* Soft background */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effects */
 }
 
 .card--project a:hover {
-    color: rgb(30, 190, 214); /* Hover color for project links */
+    background-color: rgb(30, 190, 214); /* Hover color for project links */
+    color: white; /* Change text color to white on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .card--work-history {
