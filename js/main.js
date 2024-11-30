@@ -30,3 +30,6 @@ animateElements.forEach(element => {
         scroll.update();
     });
 });
+
+
+  

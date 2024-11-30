@@ -74,6 +74,7 @@ li {
 }
 
 #user-name {
+    font-family: 'Times New Roman', serif; /* Change font to Times New Roman */
     font-size: 48px;
     line-height: 1.2em;
     white-space: nowrap;
